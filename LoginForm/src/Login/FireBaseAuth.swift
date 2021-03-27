@@ -12,15 +12,22 @@ import FirebaseAuth
 
 public class FirebaseAuthManager {
     
-    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool, _ user: FirebaseAuth.User?) -> Void) {
+        
+    
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
                 print(user)
-                completionBlock(true)
+               
+                completionBlock(true,user)
+              
+    
             } else {
-                completionBlock(false)
+                completionBlock(false,nil)
+     
             }
         }
+        
     }
     
     func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {

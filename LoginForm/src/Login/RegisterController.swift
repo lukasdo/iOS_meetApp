@@ -185,15 +185,19 @@ class RegisterController: UIViewController {
         if let email = mail.text, let password = password.text, let fname = firstName.text, let lname = lastName.text {
             if password == passwordTwo.text && email.isValidEmail() {
                 print("Email: " + email + " PW: " + password)
-            signUpManager.createUser(email: email, password: password) {[weak self] (success) in
+            signUpManager.createUser(email: email, password: password) {[weak self] (success,user) in
                 guard let self = self
                     else { return }
                 var message: String = ""
+                let uid = user?.uid
+       
                 if (success) {
+                 
                     message = "User was sucessfully created."
                     let user = User(first: fname, last: lname, mail: email)
 //                    TODO:: Name wegspeichern
-                    db.addUser(values: user, key: email)
+//                    success.
+                    db.addUser(values: user, key: uid!)
                     
                 } else {
                     message = "There was an error."

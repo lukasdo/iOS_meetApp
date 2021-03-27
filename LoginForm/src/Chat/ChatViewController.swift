@@ -39,8 +39,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user2Name = currentUser?.displayName ?? currentUser?.email
-        user2UID = currentUser?.uid
+//        user2Name = currentUser?.displayName ?? currentUser?.email
+//        user2UID =
 //        user2ImgUrl = currentUser?.photoURL
         
         self.title = user2Name ?? "Chat"
@@ -69,7 +69,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
-//        loadChat()
+        loadChat()
     }
     
     func currentSender() -> SenderType {
@@ -117,7 +117,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                      
                      let chat = Chat(dictionary: doc.data())
                      //Get the chat which has user2 id
-                     if (chat?.users.contains(self.user2UID!))! {
+                    if (chat?.users.contains(self.user2UID!))! {
                          
                          self.docReference = doc.reference
                          //fetch it's thread collection
@@ -151,7 +151,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
     
     func createNewChat() {
-        let users = [self.currentUser?.uid, self.user2UID]
+        let users = [ self.currentUser!.email!, self.currentUser!.uid,  self.user2Name, self.user2UID]
+//        let users = [self.currentUser?.uid, self.user2UID, self.currentUser?.email, self.user2Name]
         let data: [String: Any] = [ "users":users ]
         
         let db = Firestore.firestore().collection("Chats")
@@ -203,7 +204,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         print("pressed")
 
-        let message = Message(id: UUID().uuidString, content: text, created: Timestamp(), senderID: user2UID , senderName: user2Name)
+        let message = Message(id: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser!.uid , senderName: currentUser!.email!)
           
             //messages.append(message)
             insertNewMessage(message)
@@ -221,20 +222,71 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
 
       }
     
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        message.sender.
+    }
+    
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
          return isFromCurrentSender(message: message) ? .blue: .lightGray
      }
 
       @objc func backAction(_ sender: UIButton) {
             print("Dismiss")
-//            dismiss(animated: true, completion: nil)
-           let _ = self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
         }
 
-//override func viewDidLoad() {
-//    super.viewDidLoad()
-//    view.backgroundColor = UIColor.white
-//    self.title = newTitle
-//    }
-//
 }
+
+extension UIImageView {
+    func downloadImageAsync(urlString: String, defaultImage: UIImage, success: @escaping ()->(), failure: @escaping ()->()) {
+//        var imageCach: ImageCache
+        if let image = ImageCache.shared.get(key: urlString) {
+            self.image = image
+        } else {
+            // We can set default image here
+            self.image = defaultImage
+            DispatchQueue.global().async (execute: {
+                guard let url = URL(string: urlString) else {
+                    DispatchQueue.main.sync(execute: {
+                        failure()
+                    })
+                    return
+                }
+                guard let data = try? Data(contentsOf: url) else {
+                    DispatchQueue.main.sync(execute: {
+                        failure()
+                    })
+                    return
+                }
+                guard let image = UIImage(data: data) else {
+                    return
+                }
+                ImageCache.shared.set(key: urlString, image: image)
+                DispatchQueue.main.sync (execute: {
+                    self.image = image
+                    success()
+                })
+            })
+        }
+    }
+    
+    func downloadImageAsync(url: String) {
+         self.downloadImageAsync(urlString: url, defaultImage: UIImage(), success: {
+             
+         }, failure: {
+             
+         })
+     }
+}
+
+
+public struct Chats: Codable {
+
+    let user_mail: String
+    let user_id: String
+    let user_mail1: String
+    let user_id1: String
+    
+}
+
+

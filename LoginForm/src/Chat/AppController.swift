@@ -45,6 +45,13 @@ class AppController: UIViewController {
 
 //        addChildViewController(tabBarCntrl)
         view.addSubview(tabBarCntrl.view)
+        
+//        tabBarCntrl.view.translatesAutoresizingMaskIntoConstraints = false
+//        let margins = view.layoutMarginsGuide
+//           NSLayoutConstraint.activate([
+//            tabBarCntrl.view.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+//            tabBarCntrl.view.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+//        ])
         tabBarCntrl.didMove(toParent: self)
   
     }
