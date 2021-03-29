@@ -17,6 +17,9 @@
 		8088EEC6240BC4850045BE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8088EEC4240BC4850045BE45 /* LaunchScreen.storyboard */; };
 		8088EECE240BD97B0045BE45 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088EECD240BD97B0045BE45 /* SignUpController.swift */; };
 		8090FF2524129E210096CC09 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090FF2424129E210096CC09 /* CardViewController.swift */; };
+		80B19E362610DB1300D2293D /* SwiftUISignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B19E352610DB1300D2293D /* SwiftUISignUp.swift */; };
+		80B19E3E2610E2C400D2293D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B19E3D2610E2C400D2293D /* SettingsView.swift */; };
+		80B19E422610E39A00D2293D /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B19E412610E39A00D2293D /* SettingsCell.swift */; };
 		80DA1EC0240BFBF500DE84B6 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */; };
 		80DA1EC3240C074C00DE84B6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA1EC2240C074C00DE84B6 /* UIColor.swift */; };
 		80DA1EC5240C084800DE84B6 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA1EC4240C084800DE84B6 /* Styles.swift */; };
@@ -33,6 +36,7 @@
 		80F20093260D51E60072258F /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F20092260D51E60072258F /* CardContentView.swift */; };
 		80F20097260D52410072258F /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F20096260D52410072258F /* CardModel.swift */; };
 		80F2009A260D52AD0072258F /* CardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F20099260D52AD0072258F /* CardFooterView.swift */; };
+		80FDBDF0260F801500CA2A87 /* SwiftUISignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDBDEF260F801500CA2A87 /* SwiftUISignIn.swift */; };
 		8C6AD4B6DC14A905CC1730A0 /* Pods_LoginForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0C8F726A1C8E9429931861 /* Pods_LoginForm.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,9 @@
 		8088EEC7240BC4850045BE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8088EECD240BD97B0045BE45 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8090FF2424129E210096CC09 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		80B19E352610DB1300D2293D /* SwiftUISignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISignUp.swift; sourceTree = "<group>"; };
+		80B19E3D2610E2C400D2293D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		80B19E412610E39A00D2293D /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		80DA1EC2240C074C00DE84B6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		80DA1EC4240C084800DE84B6 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -67,6 +74,7 @@
 		80F20092260D51E60072258F /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		80F20096260D52410072258F /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		80F20099260D52AD0072258F /* CardFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterView.swift; sourceTree = "<group>"; };
+		80FDBDEF260F801500CA2A87 /* SwiftUISignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISignIn.swift; sourceTree = "<group>"; };
 		FD0C8F726A1C8E9429931861 /* Pods_LoginForm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginForm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +115,8 @@
 				80DA1EC1240BFBFC00DE84B6 /* src */,
 				80DA1ED3240CEA5500DE84B6 /* SwiftFiles */,
 				8088EEBF240BC47E0045BE45 /* Main.storyboard */,
+				8088EEBB240BC47E0045BE45 /* SceneDelegate.swift */,
+				8088EEB9240BC47E0045BE45 /* AppDelegate.swift */,
 				8088EEC2240BC4850045BE45 /* Assets.xcassets */,
 				8088EEC7240BC4850045BE45 /* Info.plist */,
 				8088EEC4240BC4850045BE45 /* LaunchScreen.storyboard */,
@@ -114,9 +124,59 @@
 			path = LoginForm;
 			sourceTree = "<group>";
 		};
+		80B19E382610E1AF00D2293D /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+				80DA1ED5240D773700DE84B6 /* FirebaseDB.swift */,
+				80DA1ECD240CE48F00DE84B6 /* FireBaseAuth.swift */,
+			);
+			path = FireBase;
+			sourceTree = "<group>";
+		};
+		80B19E392610E20600D2293D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80B19E352610DB1300D2293D /* SwiftUISignUp.swift */,
+				80FDBDEF260F801500CA2A87 /* SwiftUISignIn.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80B19E3A2610E21A00D2293D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8088EEBD240BC47E0045BE45 /* ViewController.swift */,
+				8088EECD240BD97B0045BE45 /* SignUpController.swift */,
+				80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		80B19E3B2610E23600D2293D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8045126B260E5DED00C052BE /* ImageChache.swift */,
+				80F20091260D51CA0072258F /* Card */,
+				80451268260DF06A00C052BE /* User.swift */,
+				80DA1EE12411934F00DE84B6 /* Chat.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80B19E3C2610E2B400D2293D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				80B19E3D2610E2C400D2293D /* SettingsView.swift */,
+				80B19E412610E39A00D2293D /* SettingsCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		80DA1EC1240BFBFC00DE84B6 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				80B19E3C2610E2B400D2293D /* Settings */,
+				80B19E382610E1AF00D2293D /* FireBase */,
 				80DA1EE6241193EE00DE84B6 /* Login */,
 				80DA1EE5241193A600DE84B6 /* Chat */,
 			);
@@ -127,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				80DA1EC2240C074C00DE84B6 /* UIColor.swift */,
+				80DA1EC4240C084800DE84B6 /* Styles.swift */,
 			);
 			path = SwiftFiles;
 			sourceTree = "<group>";
@@ -134,16 +195,13 @@
 		80DA1EE5241193A600DE84B6 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				80B19E3B2610E23600D2293D /* Model */,
 				80DA1ED7240E944400DE84B6 /* AppController.swift */,
 				80DA1EDD240EB46200DE84B6 /* ChatViewController.swift */,
-				80DA1EE12411934F00DE84B6 /* Chat.swift */,
-				80F20091260D51CA0072258F /* Card */,
 				80DA1EE3241193A100DE84B6 /* Message.swift */,
 				80DA1EDB240EB28F00DE84B6 /* DummyController.swift */,
 				8090FF2424129E210096CC09 /* CardViewController.swift */,
 				80F20070260D39BF0072258F /* ContactsViewController.swift */,
-				80451268260DF06A00C052BE /* User.swift */,
-				8045126B260E5DED00C052BE /* ImageChache.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -151,15 +209,9 @@
 		80DA1EE6241193EE00DE84B6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				80DA1EC4240C084800DE84B6 /* Styles.swift */,
-				8088EEBD240BC47E0045BE45 /* ViewController.swift */,
+				80B19E3A2610E21A00D2293D /* Controller */,
+				80B19E392610E20600D2293D /* View */,
 				80F2006D260D36C50072258F /* GoogleService-Info.plist */,
-				80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */,
-				8088EECD240BD97B0045BE45 /* SignUpController.swift */,
-				80DA1ECD240CE48F00DE84B6 /* FireBaseAuth.swift */,
-				8088EEBB240BC47E0045BE45 /* SceneDelegate.swift */,
-				8088EEB9240BC47E0045BE45 /* AppDelegate.swift */,
-				80DA1ED5240D773700DE84B6 /* FirebaseDB.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -310,17 +362,21 @@
 			files = (
 				80DA1EE22411934F00DE84B6 /* Chat.swift in Sources */,
 				80DA1EDC240EB28F00DE84B6 /* DummyController.swift in Sources */,
+				80FDBDF0260F801500CA2A87 /* SwiftUISignIn.swift in Sources */,
 				80DA1ECE240CE48F00DE84B6 /* FireBaseAuth.swift in Sources */,
 				8090FF2524129E210096CC09 /* CardViewController.swift in Sources */,
 				80F2009A260D52AD0072258F /* CardFooterView.swift in Sources */,
 				80DA1ED8240E944400DE84B6 /* AppController.swift in Sources */,
 				80F20097260D52410072258F /* CardModel.swift in Sources */,
 				80F20071260D39BF0072258F /* ContactsViewController.swift in Sources */,
+				80B19E3E2610E2C400D2293D /* SettingsView.swift in Sources */,
 				80451269260DF06A00C052BE /* User.swift in Sources */,
 				80DA1EC0240BFBF500DE84B6 /* RegisterController.swift in Sources */,
 				80DA1EC5240C084800DE84B6 /* Styles.swift in Sources */,
 				80DA1ED6240D773700DE84B6 /* FirebaseDB.swift in Sources */,
+				80B19E422610E39A00D2293D /* SettingsCell.swift in Sources */,
 				8045126C260E5DED00C052BE /* ImageChache.swift in Sources */,
+				80B19E362610DB1300D2293D /* SwiftUISignUp.swift in Sources */,
 				80DA1EC3240C074C00DE84B6 /* UIColor.swift in Sources */,
 				8088EECE240BD97B0045BE45 /* SignUpController.swift in Sources */,
 				8088EEBE240BC47E0045BE45 /* ViewController.swift in Sources */,

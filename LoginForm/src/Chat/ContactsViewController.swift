@@ -21,7 +21,11 @@ class ContactsViewController: UITableViewController {
     var matches = [Matches?]()
     override func viewWillAppear(_ animated: Bool) {
         
-  
+        DispatchQueue.main.async {
+            self.loadChats()
+            self.tableView.reloadData()
+        }
+   
         
     }
     override func viewDidLoad() {
@@ -29,10 +33,10 @@ class ContactsViewController: UITableViewController {
         self.title = newTitle
         
         
-        DispatchQueue.main.async {
-            self.loadChats()
-            self.tableView.reloadData()
-        }
+//        DispatchQueue.main.async {
+//            self.loadChats()
+//            self.tableView.reloadData()
+//        }
    
      }
     

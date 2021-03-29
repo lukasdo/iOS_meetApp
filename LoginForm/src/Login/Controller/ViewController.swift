@@ -5,8 +5,7 @@
 //  Created by Lukas on 01.03.20.
 //  Copyright © 2020 Lukas. All rights reserved.
 //
-
-
+import SwiftUI
 import UIKit
 
 class ViewController: UIViewController {
@@ -98,9 +97,17 @@ class ViewController: UIViewController {
        // performSegue(withIdentifier: "goToSignUp", sender: nil)
 
         //Alternative 2
-        guard let signUpVC = lv_storyboard.instantiateViewController(withIdentifier: "SignUpController") as? SignUpController else { return;}
-        signUpVC.modalPresentationStyle = .fullScreen
-        self.present(signUpVC, animated: true)
+//        guard let signUpVC = lv_storyboard.instantiateViewController(withIdentifier: "SignUpController") as? SignUpController else { return;}
+        
+        let swiftUIController = UIHostingController(rootView: ContentView())
+//                      addChild(swiftUIController)
+//       
+                       swiftUIController.view.frame =    self.view.bounds
+                   self.view.addSubview(swiftUIController.view)
+                       swiftUIController.didMove(toParent: self)
+//  
+        swiftUIController.modalPresentationStyle = .fullScreen
+        self.present(swiftUIController, animated: true)
         
         //Alternative 3
 //        let newVC = SignUpController()

@@ -35,7 +35,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     var user2Name: String!
     var user2ImgUrl: String!
     var user2UID: String!
-
+    let urlString = "https://firebasestorage.googleapis.com/v0/b/justetfs.appspot.com/o/_mhmi6_W_400x400.jpg?alt=media&token=3d184279-57a6-40c4-9fe6-8839dd5662ae"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -223,7 +223,22 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
       }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        message.sender.
+     
+
+      
+//        if let url = URL(string: urlString) {
+
+            avatarView.downloadImageAsync(url: urlString)
+//               avatarView.imageView.af_setImage(withURL:url,
+//                                                placeholderImage: UIImage(named: "avatarDefaultSmall"),
+//                                                filter: CircleFilter(),
+//                                                imageTransition: .crossDissolve(0.2)
+               
+//           } else {
+////               avatarView.imageView.image = UIImage(named: "avatarDefaultSmall")?.af_imageRoundedIntoCircle()
+//           }
+       
+        
     }
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
