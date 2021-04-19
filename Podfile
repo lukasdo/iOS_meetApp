@@ -7,9 +7,11 @@ target 'LoginForm' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   pod 'MessageKit'
   pod 'FirebaseFirestoreSwift'
   pod 'Shuffle-iOS'
+  pod 'Alamofire', '~> 5.2'
   # Pods for LoginForm
 
 

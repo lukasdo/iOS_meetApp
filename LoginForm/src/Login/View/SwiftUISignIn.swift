@@ -83,10 +83,11 @@ struct Home: View {
                         .foregroundColor(.white)
                         .frame(width: 35)
                     TextField("EMAIL", text: $userName)
+                        .foregroundColor(.white)
                         .autocapitalization(.none)
                 }
                 .padding()
-                .background(Color.white.opacity(userName == "" ? 0 : 0.12))
+                .background(Color.white.opacity( 0.12))
                 .cornerRadius(15)
                 .padding(.horizontal)
                 //
@@ -99,10 +100,11 @@ struct Home: View {
                         .foregroundColor(.white)
                         .frame(width: 35)
                     TextField("PASSWORD", text: $password)
+                        .foregroundColor(.white)
                         .autocapitalization(.none)
                 }
                 .padding()
-                .background(Color.white.opacity(userName == "" ? 0 : 0.12))
+                .background(Color.white.opacity( 0.12))
                 .cornerRadius(15)
                 .padding(.horizontal)
                 .padding(.top)

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class AppController: UIViewController {
     
@@ -19,14 +20,20 @@ class AppController: UIViewController {
         self.title = "Main"
         
         tabBarCntrl = UITabBarController()
-        let searchVC = DummyController()
-        searchVC.newTitle = "Search"
-        searchVC.view.backgroundColor = UIColor.orange
+        
+        
+        let swiftUIController = UIHostingController(rootView: UserProfileView(name: "Ludo"))
+//                      addChild(swiftUIController)
+//
+                       swiftUIController.view.frame =    self.view.bounds
+                   self.view.addSubview(swiftUIController.view)
+                       swiftUIController.didMove(toParent: self)
+
         
         
 
         let messagesVC = ContactsViewController()
-        messagesVC.newTitle = "Contacts"
+        messagesVC.newTitle = "Profile"
 //        messagesVC.view.backgroundColor = UIColor.orange
         
         
@@ -34,11 +41,11 @@ class AppController: UIViewController {
         chatVC.newTitle = "Chats"
 //        chatVC.view.backgroundColor = UIColor.blue
         
-        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        swiftUIController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
         chatVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         messagesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
         
-        let controllers = [searchVC, chatVC,messagesVC]
+        let controllers = [swiftUIController, chatVC,messagesVC]
         tabBarCntrl.viewControllers = controllers
         
         tabBarCntrl.viewControllers = controllers.map { UINavigationController(rootViewController: $0)}

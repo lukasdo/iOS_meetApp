@@ -21,33 +21,41 @@ class ContactsViewController: UITableViewController {
     var matches = [Matches?]()
     override func viewWillAppear(_ animated: Bool) {
         
-        DispatchQueue.main.async {
-            self.loadChats()
-            self.tableView.reloadData()
-        }
-   
+          self.loadChats() {matches,error  in
+                if let err = error {
+                    print(err)
+                }
+                self.matches = matches
+                self.tableView.reloadData()
+            }
+ 
         
     }
     override func viewDidLoad() {
        super.viewDidLoad()
         self.title = newTitle
         
-        
-//        DispatchQueue.main.async {
+//        DispatchQueue.global(qos: .userInitiated).async {
 //            self.loadChats()
-//            self.tableView.reloadData()
+//            // Bounce back to the main thread to update the UI
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
 //        }
+        
+        
    
      }
     
-    func loadChats() {
+    func loadChats(completion: @escaping ([Matches], Error?) -> Void) {
         let db = Firestore.firestore().collection("Matches").whereField(FieldPath.documentID(), isEqualTo: currentUser?.uid)
                 
-        
+        var matchArray = [Matches]()
         db.getDocuments { (chatQuerySnap, error) in
             
             if let error = error {
                 print("Error: \(error)")
+                completion(matchArray,error)
                 return
             } else {
                 
@@ -67,10 +75,11 @@ class ContactsViewController: UITableViewController {
                         for docum in query!.documents {
                             var match = Matches(dictionary: docum.data())
                             print(match)
-                            self.matches.append(match!)
+                            matchArray.append(match!)
                             print(self.matches)
-                        
+                    
                         }
+                        completion(matchArray, nil)
                       
                     }
               

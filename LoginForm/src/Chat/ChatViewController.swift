@@ -50,11 +50,14 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         
                   
         let backButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: self, action: #selector(backAction(_:)))
+
+        let callButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.camera, target: self, action: #selector(backAction(_:)))
       
         navigationItem.backBarButtonItem = backButton
         navigationItem.hidesBackButton = false
         navigationItem.largeTitleDisplayMode = .never
             
+        navigationItem.rightBarButtonItem = callButton
         self.navigationItem.setLeftBarButtonItems([backButton], animated: true)
 
 
@@ -225,19 +228,18 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
      
 
-      
-//        if let url = URL(string: urlString) {
 
-            avatarView.downloadImageAsync(url: urlString)
-//               avatarView.imageView.af_setImage(withURL:url,
-//                                                placeholderImage: UIImage(named: "avatarDefaultSmall"),
-//                                                filter: CircleFilter(),
-//                                                imageTransition: .crossDissolve(0.2)
-               
-//           } else {
-////               avatarView.imageView.image = UIImage(named: "avatarDefaultSmall")?.af_imageRoundedIntoCircle()
-//           }
-       
+//        if let url = URL(string: urlString) {
+        DispatchQueue.global(qos: .background).async {
+            print("This is run on a background queue")
+            FirebaseDB().returnProfileUrl(id: message.sender.senderId,completion: { url in
+                if let downUrl = url {
+                    avatarView.downloadImageAsync(url: downUrl)
+                }
+            })
+            
+        }
+        
         
     }
     

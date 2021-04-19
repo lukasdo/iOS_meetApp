@@ -11,46 +11,48 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        NavigationView {
-            List {
-               Section {
-                    Button(action: {},
-                           label: {
-                            SettingsCell(title: "Features", imgName: "sparkle", clr: .purple)
-                                    .foregroundColor(colorScheme == .dark ? .white : .black)
-                           })
-                    
-                Button(action: {},
-                       label: {
-                        SettingsCell(title: "Settings", imgName: "sparkle", clr: .purple)
-                                .foregroundColor(colorScheme == .dark ? .white : .black)
-                       })
-                Button(action: {},
-                       label: {
-                        SettingsCell(title: "Bla", imgName: "sparkle", clr: .purple)
-                                .foregroundColor(colorScheme == .dark ? .white : .black)
-                       })
-                }
-                
-                
-                   Section {
+        if #available(iOS 14.0, *) {
+            NavigationView {
+                List {
+                    Section {
                         Button(action: {},
                                label: {
                                 SettingsCell(title: "Features", imgName: "sparkle", clr: .purple)
-                                        .foregroundColor(colorScheme == .dark ? .white : .black)
+                                    .foregroundColor(colorScheme == .dark ? .white : .black)
                                })
                         
-                    Button(action: {},
-                           label: {
-                            SettingsCell(title: "Settings", imgName: "sparkle", clr: .purple)
+                        Button(action: {},
+                               label: {
+                                SettingsCell(title: "Settings", imgName: "sparkle", clr: .purple)
                                     .foregroundColor(colorScheme == .dark ? .white : .black)
-                           })
+                               })
+                        Button(action: {},
+                               label: {
+                                SettingsCell(title: "Bla", imgName: "sparkle", clr: .purple)
+                                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                               })
                     }
+                    
+                    
+                    Section {
+                        Button(action: {},
+                               label: {
+                                SettingsCell(title: "Features", imgName: "sparkle", clr: .purple)
+                                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                               })
+                        
+                        Button(action: {},
+                               label: {
+                                SettingsCell(title: "Settings", imgName: "sparkle", clr: .purple)
+                                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                               })
+                    }
+                }
             }
+            .listStyle(GroupedListStyle())
+            //        .environment(\.horizontalSizeClass, .regular)
+            .navigationTitle("Settings")
         }
-        .listStyle(GroupedListStyle())
-//        .environment(\.horizontalSizeClass, .regular)
-        .navigationBarTitle("Settings")
     }
 }
 

@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80003747262876AE00364A3B /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80003746262876AE00364A3B /* SpinnerViewController.swift */; };
+		8000376A2628D45900364A3B /* MongoWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800037692628D45900364A3B /* MongoWrapper.swift */; };
+		800037922629B02E00364A3B /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800037912629B02E00364A3B /* APIWrapper.swift */; };
+		80151DA12624DC1A00F5191D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80151DA02624DC1A00F5191D /* UserProfile.swift */; };
+		8017935826126B3C00F9E8C3 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017935726126B3C00F9E8C3 /* UserProfileView.swift */; };
+		8017935B26126D5300F9E8C3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017935A26126D5300F9E8C3 /* SettingsController.swift */; };
 		80451269260DF06A00C052BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80451268260DF06A00C052BE /* User.swift */; };
 		8045126C260E5DED00C052BE /* ImageChache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045126B260E5DED00C052BE /* ImageChache.swift */; };
+		8076C1D726172772002E1D08 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1D626172772002E1D08 /* SignUpController.swift */; };
+		8076C1DA2617277B002E1D08 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1D92617277B002E1D08 /* RegisterController.swift */; };
+		8076C1DE26172796002E1D08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1DD26172796002E1D08 /* SceneDelegate.swift */; };
+		8076C1E2261727BE002E1D08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1E1261727BE002E1D08 /* ViewController.swift */; };
 		8088EEBA240BC47E0045BE45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088EEB9240BC47E0045BE45 /* AppDelegate.swift */; };
-		8088EEBC240BC47E0045BE45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088EEBB240BC47E0045BE45 /* SceneDelegate.swift */; };
-		8088EEBE240BC47E0045BE45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088EEBD240BC47E0045BE45 /* ViewController.swift */; };
 		8088EEC1240BC47E0045BE45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8088EEBF240BC47E0045BE45 /* Main.storyboard */; };
 		8088EEC3240BC4850045BE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8088EEC2240BC4850045BE45 /* Assets.xcassets */; };
 		8088EEC6240BC4850045BE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8088EEC4240BC4850045BE45 /* LaunchScreen.storyboard */; };
-		8088EECE240BD97B0045BE45 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088EECD240BD97B0045BE45 /* SignUpController.swift */; };
 		8090FF2524129E210096CC09 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090FF2424129E210096CC09 /* CardViewController.swift */; };
 		80B19E362610DB1300D2293D /* SwiftUISignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B19E352610DB1300D2293D /* SwiftUISignUp.swift */; };
 		80B19E3E2610E2C400D2293D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B19E3D2610E2C400D2293D /* SettingsView.swift */; };
 		80B19E422610E39A00D2293D /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B19E412610E39A00D2293D /* SettingsCell.swift */; };
-		80DA1EC0240BFBF500DE84B6 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */; };
 		80DA1EC3240C074C00DE84B6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA1EC2240C074C00DE84B6 /* UIColor.swift */; };
 		80DA1EC5240C084800DE84B6 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DA1EC4240C084800DE84B6 /* Styles.swift */; };
 		80DA1ECC240CE02100DE84B6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 80DA1ECB240CE02100DE84B6 /* Podfile */; };
@@ -43,22 +49,28 @@
 /* Begin PBXFileReference section */
 		2E9F68A320E2B5EE0897D998 /* Pods-LoginForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginForm.release.xcconfig"; path = "Target Support Files/Pods-LoginForm/Pods-LoginForm.release.xcconfig"; sourceTree = "<group>"; };
 		7480C6723E882C1F8EC08551 /* Pods-LoginForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginForm.debug.xcconfig"; path = "Target Support Files/Pods-LoginForm/Pods-LoginForm.debug.xcconfig"; sourceTree = "<group>"; };
+		80003746262876AE00364A3B /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		800037692628D45900364A3B /* MongoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoWrapper.swift; sourceTree = "<group>"; };
+		800037912629B02E00364A3B /* APIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
+		80151DA02624DC1A00F5191D /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		8017935726126B3C00F9E8C3 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		8017935A26126D5300F9E8C3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		80451268260DF06A00C052BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8045126B260E5DED00C052BE /* ImageChache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChache.swift; sourceTree = "<group>"; };
+		8076C1D626172772002E1D08 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpController.swift; path = LoginForm/src/Login/SignUpController.swift; sourceTree = SOURCE_ROOT; };
+		8076C1D92617277B002E1D08 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = LoginForm/src/Login/RegisterController.swift; sourceTree = SOURCE_ROOT; };
+		8076C1DD26172796002E1D08 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = src/Login/SceneDelegate.swift; sourceTree = "<group>"; };
+		8076C1E1261727BE002E1D08 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = LoginForm/src/Login/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		8088EEB6240BC47E0045BE45 /* LoginForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8088EEB9240BC47E0045BE45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8088EEBB240BC47E0045BE45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8088EEBD240BC47E0045BE45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8088EEC0240BC47E0045BE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8088EEC2240BC4850045BE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8088EEC5240BC4850045BE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8088EEC7240BC4850045BE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8088EECD240BD97B0045BE45 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		8090FF2424129E210096CC09 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		80B19E352610DB1300D2293D /* SwiftUISignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISignUp.swift; sourceTree = "<group>"; };
 		80B19E3D2610E2C400D2293D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		80B19E412610E39A00D2293D /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		80DA1EC2240C074C00DE84B6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		80DA1EC4240C084800DE84B6 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		80DA1ECB240CE02100DE84B6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -90,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800037902629B01400364A3B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				800037912629B02E00364A3B /* APIWrapper.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		8088EEAD240BC47E0045BE45 = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +135,7 @@
 				80DA1EC1240BFBFC00DE84B6 /* src */,
 				80DA1ED3240CEA5500DE84B6 /* SwiftFiles */,
 				8088EEBF240BC47E0045BE45 /* Main.storyboard */,
-				8088EEBB240BC47E0045BE45 /* SceneDelegate.swift */,
+				8076C1DD26172796002E1D08 /* SceneDelegate.swift */,
 				8088EEB9240BC47E0045BE45 /* AppDelegate.swift */,
 				8088EEC2240BC4850045BE45 /* Assets.xcassets */,
 				8088EEC7240BC4850045BE45 /* Info.plist */,
@@ -129,6 +149,7 @@
 			children = (
 				80DA1ED5240D773700DE84B6 /* FirebaseDB.swift */,
 				80DA1ECD240CE48F00DE84B6 /* FireBaseAuth.swift */,
+				800037692628D45900364A3B /* MongoWrapper.swift */,
 			);
 			path = FireBase;
 			sourceTree = "<group>";
@@ -145,9 +166,9 @@
 		80B19E3A2610E21A00D2293D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8088EEBD240BC47E0045BE45 /* ViewController.swift */,
-				8088EECD240BD97B0045BE45 /* SignUpController.swift */,
-				80DA1EBF240BFBF500DE84B6 /* RegisterController.swift */,
+				8076C1E1261727BE002E1D08 /* ViewController.swift */,
+				8076C1D92617277B002E1D08 /* RegisterController.swift */,
+				8076C1D626172772002E1D08 /* SignUpController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,9 +176,11 @@
 		80B19E3B2610E23600D2293D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				80DA1EE3241193A100DE84B6 /* Message.swift */,
 				8045126B260E5DED00C052BE /* ImageChache.swift */,
 				80F20091260D51CA0072258F /* Card */,
 				80451268260DF06A00C052BE /* User.swift */,
+				80151DA02624DC1A00F5191D /* UserProfile.swift */,
 				80DA1EE12411934F00DE84B6 /* Chat.swift */,
 			);
 			path = Model;
@@ -168,6 +191,8 @@
 			children = (
 				80B19E3D2610E2C400D2293D /* SettingsView.swift */,
 				80B19E412610E39A00D2293D /* SettingsCell.swift */,
+				8017935726126B3C00F9E8C3 /* UserProfileView.swift */,
+				8017935A26126D5300F9E8C3 /* SettingsController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -175,6 +200,8 @@
 		80DA1EC1240BFBFC00DE84B6 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				800037902629B01400364A3B /* API */,
+				80B19E3B2610E23600D2293D /* Model */,
 				80B19E3C2610E2B400D2293D /* Settings */,
 				80B19E382610E1AF00D2293D /* FireBase */,
 				80DA1EE6241193EE00DE84B6 /* Login */,
@@ -195,13 +222,12 @@
 		80DA1EE5241193A600DE84B6 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				80B19E3B2610E23600D2293D /* Model */,
 				80DA1ED7240E944400DE84B6 /* AppController.swift */,
 				80DA1EDD240EB46200DE84B6 /* ChatViewController.swift */,
-				80DA1EE3241193A100DE84B6 /* Message.swift */,
 				80DA1EDB240EB28F00DE84B6 /* DummyController.swift */,
 				8090FF2424129E210096CC09 /* CardViewController.swift */,
 				80F20070260D39BF0072258F /* ContactsViewController.swift */,
+				80003746262876AE00364A3B /* SpinnerViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -261,6 +287,8 @@
 			dependencies = (
 			);
 			name = LoginForm;
+			packageProductDependencies = (
+			);
 			productName = LoginForm;
 			productReference = 8088EEB6240BC47E0045BE45 /* LoginForm.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +317,8 @@
 				Base,
 			);
 			mainGroup = 8088EEAD240BC47E0045BE45;
+			packageReferences = (
+			);
 			productRefGroup = 8088EEB7240BC47E0045BE45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,30 +390,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8017935B26126D5300F9E8C3 /* SettingsController.swift in Sources */,
 				80DA1EE22411934F00DE84B6 /* Chat.swift in Sources */,
 				80DA1EDC240EB28F00DE84B6 /* DummyController.swift in Sources */,
 				80FDBDF0260F801500CA2A87 /* SwiftUISignIn.swift in Sources */,
 				80DA1ECE240CE48F00DE84B6 /* FireBaseAuth.swift in Sources */,
 				8090FF2524129E210096CC09 /* CardViewController.swift in Sources */,
+				8017935826126B3C00F9E8C3 /* UserProfileView.swift in Sources */,
 				80F2009A260D52AD0072258F /* CardFooterView.swift in Sources */,
 				80DA1ED8240E944400DE84B6 /* AppController.swift in Sources */,
 				80F20097260D52410072258F /* CardModel.swift in Sources */,
+				8076C1DA2617277B002E1D08 /* RegisterController.swift in Sources */,
+				800037922629B02E00364A3B /* APIWrapper.swift in Sources */,
 				80F20071260D39BF0072258F /* ContactsViewController.swift in Sources */,
 				80B19E3E2610E2C400D2293D /* SettingsView.swift in Sources */,
 				80451269260DF06A00C052BE /* User.swift in Sources */,
-				80DA1EC0240BFBF500DE84B6 /* RegisterController.swift in Sources */,
+				80003747262876AE00364A3B /* SpinnerViewController.swift in Sources */,
 				80DA1EC5240C084800DE84B6 /* Styles.swift in Sources */,
+				8076C1DE26172796002E1D08 /* SceneDelegate.swift in Sources */,
+				80151DA12624DC1A00F5191D /* UserProfile.swift in Sources */,
 				80DA1ED6240D773700DE84B6 /* FirebaseDB.swift in Sources */,
 				80B19E422610E39A00D2293D /* SettingsCell.swift in Sources */,
+				8076C1E2261727BE002E1D08 /* ViewController.swift in Sources */,
 				8045126C260E5DED00C052BE /* ImageChache.swift in Sources */,
 				80B19E362610DB1300D2293D /* SwiftUISignUp.swift in Sources */,
 				80DA1EC3240C074C00DE84B6 /* UIColor.swift in Sources */,
-				8088EECE240BD97B0045BE45 /* SignUpController.swift in Sources */,
-				8088EEBE240BC47E0045BE45 /* ViewController.swift in Sources */,
 				80F20093260D51E60072258F /* CardContentView.swift in Sources */,
+				8076C1D726172772002E1D08 /* SignUpController.swift in Sources */,
+				8000376A2628D45900364A3B /* MongoWrapper.swift in Sources */,
 				8088EEBA240BC47E0045BE45 /* AppDelegate.swift in Sources */,
 				80DA1EDE240EB46200DE84B6 /* ChatViewController.swift in Sources */,
-				8088EEBC240BC47E0045BE45 /* SceneDelegate.swift in Sources */,
 				80DA1EE4241193A100DE84B6 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
