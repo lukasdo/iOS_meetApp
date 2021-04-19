@@ -15,6 +15,7 @@
 		8017935B26126D5300F9E8C3 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017935A26126D5300F9E8C3 /* SettingsController.swift */; };
 		80451269260DF06A00C052BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80451268260DF06A00C052BE /* User.swift */; };
 		8045126C260E5DED00C052BE /* ImageChache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8045126B260E5DED00C052BE /* ImageChache.swift */; };
+		806F347A262DC9AC00823604 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806F3479262DC9AC00823604 /* Extensions.swift */; };
 		8076C1D726172772002E1D08 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1D626172772002E1D08 /* SignUpController.swift */; };
 		8076C1DA2617277B002E1D08 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1D92617277B002E1D08 /* RegisterController.swift */; };
 		8076C1DE26172796002E1D08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076C1DD26172796002E1D08 /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 		8017935A26126D5300F9E8C3 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		80451268260DF06A00C052BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8045126B260E5DED00C052BE /* ImageChache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChache.swift; sourceTree = "<group>"; };
+		806F3479262DC9AC00823604 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8076C1D626172772002E1D08 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpController.swift; path = LoginForm/src/Login/SignUpController.swift; sourceTree = SOURCE_ROOT; };
 		8076C1D92617277B002E1D08 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterController.swift; path = LoginForm/src/Login/RegisterController.swift; sourceTree = SOURCE_ROOT; };
 		8076C1DD26172796002E1D08 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = src/Login/SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		80DA1ED3240CEA5500DE84B6 /* SwiftFiles */ = {
 			isa = PBXGroup;
 			children = (
+				806F3479262DC9AC00823604 /* Extensions.swift */,
 				80DA1EC2240C074C00DE84B6 /* UIColor.swift */,
 				80DA1EC4240C084800DE84B6 /* Styles.swift */,
 			);
@@ -417,6 +420,7 @@
 				80DA1EC3240C074C00DE84B6 /* UIColor.swift in Sources */,
 				80F20093260D51E60072258F /* CardContentView.swift in Sources */,
 				8076C1D726172772002E1D08 /* SignUpController.swift in Sources */,
+				806F347A262DC9AC00823604 /* Extensions.swift in Sources */,
 				8000376A2628D45900364A3B /* MongoWrapper.swift in Sources */,
 				8088EEBA240BC47E0045BE45 /* AppDelegate.swift in Sources */,
 				80DA1EDE240EB46200DE84B6 /* ChatViewController.swift in Sources */,

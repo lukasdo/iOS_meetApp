@@ -34,6 +34,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct Home: View {
+    @State var showSignUp = false
     @State var willCallFunc = false
     @State var userName = ""
     @State var password = ""
@@ -50,7 +51,7 @@ struct Home: View {
         if #available(iOS 14.0, *) {
            
             VStack {
-                SwiftUIViewController(isCallingFunc: $willCallFunc, username: $userName, passwd: $password)
+                SwiftUIViewController(showSignUp: $showSignUp,isCallingFunc: $willCallFunc, username: $userName, passwd: $password)
                 Spacer(minLength: 15)
                 
                 //            Image("logo")
@@ -82,7 +83,7 @@ struct Home: View {
                         
                         .foregroundColor(.white)
                         .frame(width: 35)
-                    TextField("EMAIL", text: $userName)
+                    TextField("E-mail", text: $userName)
                         .foregroundColor(.white)
                         .autocapitalization(.none)
                 }
@@ -99,7 +100,7 @@ struct Home: View {
                         
                         .foregroundColor(.white)
                         .frame(width: 35)
-                    TextField("PASSWORD", text: $password)
+                    SecureField("Password", text: $password)
                         .foregroundColor(.white)
                         .autocapitalization(.none)
                 }
@@ -137,15 +138,17 @@ struct Home: View {
                 HStack(spacing:5) {
                     Text("Dont have an account?")
                     //                .foregroundColor(Color.white.opacity(0.6))
-                    Button(action: {print("Pimmel")}, label: {
+                    Button(action: {showSignUp = true}, label: {
                         Text("Signup")
                             .fontWeight(.heavy)
                             .foregroundColor(Color(.cyan))
                     })
                 }
                 .padding(.vertical)
+                Spacer(minLength: 30)
             }
-            .background(Color(.systemIndigo).ignoresSafeArea(.all,edges: .all))
+            .background( LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 6/255, green: 0/255, blue: 58/255, alpha: 1.0)),
+                                                                    Color(UIColor(red: 0/255, green: 31/255, blue: 89/255, alpha: 1.0))]),  startPoint: .bottomTrailing, endPoint: .top)).edgesIgnoringSafeArea(.all)
         } else {
             // Fallback on earlier versions
         }

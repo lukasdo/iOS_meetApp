@@ -51,8 +51,8 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
                   
         let backButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: self, action: #selector(backAction(_:)))
 
-        let callButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.camera, target: self, action: #selector(backAction(_:)))
-      
+        let callButton = UIBarButtonItem(image: UIImage(systemName: "phone.fill"), style: .done, target: self, action: #selector(backAction(_:)))
+        
         navigationItem.backBarButtonItem = backButton
         navigationItem.hidesBackButton = false
         navigationItem.largeTitleDisplayMode = .never

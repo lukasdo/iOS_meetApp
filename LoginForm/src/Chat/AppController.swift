@@ -22,7 +22,7 @@ class AppController: UIViewController {
         tabBarCntrl = UITabBarController()
         
         
-        let swiftUIController = UIHostingController(rootView: UserProfileView(name: "Ludo"))
+        let swiftUIController = UIHostingController(rootView: UserProfileView(name: "Ludo",sb: self.storyboard))
 //                      addChild(swiftUIController)
 //
                        swiftUIController.view.frame =    self.view.bounds
@@ -33,17 +33,18 @@ class AppController: UIViewController {
         
 
         let messagesVC = ContactsViewController()
-        messagesVC.newTitle = "Profile"
+        messagesVC.newTitle = "Chats"
 //        messagesVC.view.backgroundColor = UIColor.orange
         
         
         let chatVC = OverViewController()
-        chatVC.newTitle = "Chats"
+        chatVC.newTitle = "Meet"
 //        chatVC.view.backgroundColor = UIColor.blue
         
-        swiftUIController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-        chatVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
-        messagesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        swiftUIController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 0)
+        chatVC.tabBarItem = UITabBarItem(title: "Meet", image: UIImage(systemName: "rectangle.stack.person.crop"), tag: 1)
+        messagesVC.tabBarItem = UITabBarItem(title: "Chats", image: UIImage(systemName: "text.bubble"), tag: 2)
+        
         
         let controllers = [swiftUIController, chatVC,messagesVC]
         tabBarCntrl.viewControllers = controllers

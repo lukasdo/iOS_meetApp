@@ -73,7 +73,7 @@ class APIWrapper {
                     httpResponse.statusCode == 200,
                     let jsonData = data
                     else {
-                        
+                        print(response)
                         print("ResponseProblem")
                         return
                 }
@@ -95,42 +95,79 @@ class APIWrapper {
     }
     
     
+   
     func getProfiles(){
-            
-            let endpoint = "/retrieve/user"
+               
+               let endpoint = "/retrieve/users"
+       
+               var urlRequ = URLRequest(url: URL(string: baseURL+endpoint)!)
+               urlRequ.httpMethod = "GET"
+           urlRequ.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+           urlRequ.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+               
+               let task = URLSession.shared.dataTask(with: urlRequ) { data, response, _ in
+                   guard let httpResponse = response as? HTTPURLResponse,
+                       httpResponse.statusCode == 200,
+                       let jsonData = data
+                       else {
+                           print(response)
+                           print("ResponseProblem")
+   //                    print(self.httpResponse)
+                           return
+                   }
+                   do{
+                       print(jsonData)
+                        let messageData = try JSONDecoder().decode([Throwable<UserStruct>].self, from: jsonData)
+                           
+                           DispatchQueue.main.async {
+                               let products = messageData.compactMap { try? $0.result.get() }
+                               //UPdate UI
+                               self.delegate?.updateUserProfile(users: products)
+                       }
+                   }catch{
+                       print(error)
+                       print("DecoingProb")
+                   }
+               }
+               task.resume()
+       }
     
-            var urlRequ = URLRequest(url: URL(string: baseURL+endpoint)!)
-            urlRequ.httpMethod = "GET"
-//            urlRequ.httpBody = body
-        urlRequ.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
-        urlRequ.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-            
-            let task = URLSession.shared.dataTask(with: urlRequ) { data, response, _ in
-                guard let httpResponse = response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200,
-                    let jsonData = data
-                    else {
-                        
-                        print("ResponseProblem")
-//                    print(self.httpResponse)
-                        return
-                }
-                do{
-                    print(jsonData)
-                     let messageData = try JSONDecoder().decode([Throwable<UserStruct>].self, from: jsonData)
-                        
-                        DispatchQueue.main.async {
-                            let products = messageData.compactMap { try? $0.result.get() }
-                            //UPdate UI
-                            self.delegate?.updateUserProfile(users: products)
-                    }
-                }catch{
-                    print(error)
-                    print("DecoingProb")
-                }
-            }
-            task.resume()
-    }
+    func getMatches(userId: String){
+               
+               let endpoint = "/retrieve/chats?username="+userId
+       
+               var urlRequ = URLRequest(url: URL(string: baseURL+endpoint)!)
+               urlRequ.httpMethod = "GET"
+           urlRequ.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+           urlRequ.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+               
+               let task = URLSession.shared.dataTask(with: urlRequ) { data, response, _ in
+                   guard let httpResponse = response as? HTTPURLResponse,
+                       httpResponse.statusCode == 200,
+                       let jsonData = data
+                       else {
+                           print(response)
+                           print("ResponseProblem")
+   //                    print(self.httpResponse)
+                           return
+                   }
+                   do{
+                       print(jsonData)
+                        let messageData = try JSONDecoder().decode([Throwable<UserStruct>].self, from: jsonData)
+                           
+                           DispatchQueue.main.async {
+                               let products = messageData.compactMap { try? $0.result.get() }
+                               //UPdate UI
+                               self.delegate?.updateUserProfile(users: products)
+                       }
+                   }catch{
+                       print(error)
+                       print("DecoingProb")
+                   }
+               }
+               task.resume()
+       }
+    
 }
 
 // STRUCTS to decode
@@ -163,26 +200,3 @@ struct ID: Codable {
         case oid = "$oid"
     }
 }
-
-//
-//// MARK: - Station
-//struct StationDetail: Codable {
-//    let id, name:String
-//    let brand: String?
-//    let street: String?
-//    let houseNumber: String?
-//    let postCode: Int?
-//    let place: String?
-//    let openingTimes: [OpeningTime]
-//    let overrides: [String]
-//    let wholeDay, isOpen: Bool?
-//    let e5, e10, diesel :Double?
-//    let lat: Double
-//    let lng: Double
-//    let state: String?
-//}
-//
-//// MARK: - OpeningTime
-//struct OpeningTime: Codable {
-//    let text, start, end: String
-//}

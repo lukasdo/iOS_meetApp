@@ -35,6 +35,8 @@ struct SwiftUISignUp_Previews: PreviewProvider {
 }
 
 struct Register: View {
+    
+    @State var showSignIn = false
     @State var willCallFunc = false
     @State var userName = ""
     @State var password = ""
@@ -51,7 +53,7 @@ struct Register: View {
         if #available(iOS 14.0, *) {
            
             VStack {
-                RegisterUIController(username: $userName, password: $password, name: $name, calledFunc: $willCallFunc)
+                RegisterUIController(showSignin: $showSignIn, username: $userName, password: $password, name: $name, calledFunc: $willCallFunc)
                 Spacer(minLength: 15)
                 
                 //            Image("logo")
@@ -83,7 +85,7 @@ struct Register: View {
                         
                         .foregroundColor(.white)
                         .frame(width: 35)
-                    TextField("EMAIL", text: $userName, onEditingChanged: { (isChanged) in
+                    TextField("E-mail", text: $userName, onEditingChanged: { (isChanged) in
                         if !isChanged {
                             if self.textFieldValidatorEmail(self.userName) {
                                 self.isEmailValid = true
@@ -106,30 +108,16 @@ struct Register: View {
                 .background(Color.white.opacity(0.12))
                 .cornerRadius(15)
                 .padding(.horizontal)
+                
                 HStack {
-                    Image("envelope")
+                    Image(systemName: "person.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .font(.title2)
                         
                         .foregroundColor(.white)
                         .frame(width: 35)
-                    TextField("EMAIL", text: $userName)
-                        .autocapitalization(.none)
-                }
-                .padding()
-                .background(Color.white.opacity( 0.12))
-                .cornerRadius(15)
-                .padding(.horizontal)
-                HStack {
-                    Image("envelope")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .font(.title2)
-                        
-                        .foregroundColor(.white)
-                        .frame(width: 35)
-                    TextField("EMAIL", text: $userName)
+                    TextField("Name", text: $userName)
                         .autocapitalization(.none)
                 }
                 .padding()
@@ -145,7 +133,7 @@ struct Register: View {
                         
                         .foregroundColor(.white)
                         .frame(width: 35)
-                    TextField("PASSWORD", text: $password)
+                    SecureField("Password", text: $password)
                         .autocapitalization(.none)
                 }
                 .padding()
@@ -162,7 +150,7 @@ struct Register: View {
                         
                         .foregroundColor(.white)
                         .frame(width: 35)
-                    TextField("Repeate password", text: $password)
+                    SecureField("Repeat password", text: $password)
                     
                 }
                 .padding()
@@ -198,15 +186,17 @@ struct Register: View {
                 HStack(spacing:5) {
                     Text("Already have an account?")
                     //                .foregroundColor(Color.white.opacity(0.6))
-                    Button(action: {print()}, label: {
+                    Button(action: {showSignIn = true}, label: {
                         Text("Sign in")
                             .fontWeight(.heavy)
                             .foregroundColor(Color(.cyan))
                     })
                 }
                 .padding(.vertical)
+                Spacer(minLength: 30)
             }
-            .background(Color(.systemIndigo).ignoresSafeArea(.all,edges: .all))
+            .background( LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 6/255, green: 0/255, blue: 58/255, alpha: 1.0)),
+                                                                    Color(UIColor(red: 0/255, green: 31/255, blue: 89/255, alpha: 1.0))]),  startPoint: .bottomTrailing, endPoint: .topLeading)).edgesIgnoringSafeArea(.all)
         } else {
             // Fallback on earlier versions
         }

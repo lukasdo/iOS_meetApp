@@ -18,7 +18,7 @@ class TinderCardContentView: UIView {
     return background
   }()
 
-  private let imageView: UIImageView = {
+    private let imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     return imageView
@@ -33,10 +33,13 @@ class TinderCardContentView: UIView {
     return gradient
   }()
 
-  init(withImage image: UIImage?) {
+    init(url: String) {
     super.init(frame: .zero)
-    imageView.image = image
-    initialize()
+    imageView.downloadImageAsync(url: "https://firebasestorage.googleapis.com/v0/b/justetfs.appspot.com/o/7scVIgCpfYZxx3GbMVupbr1VABx1%2FuserPhoto?alt=media&token=2f0c7f77-d2e9-416a-92c2-9def7e7d4366")
+    self.initialize()
+
+
+ 
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -45,10 +48,10 @@ class TinderCardContentView: UIView {
 
   private func initialize() {
     addSubview(backgroundView)
-  
+    backgroundView.anchorToSuperview()
     backgroundView.addSubview(imageView)
-//    imageView.anchorToSuperview()
-//    applyShadow(radius: 8, opacity: 0.2, offset: CGSize(width: 0, height: 2))
+    imageView.anchorToSuperview()
+    applyShadow(radius: 8, opacity: 0.2, offset: CGSize(width: 0, height: 2))
     backgroundView.layer.insertSublayer(gradientLayer, above: imageView.layer)
   }
 

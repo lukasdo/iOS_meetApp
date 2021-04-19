@@ -16,7 +16,7 @@ struct UserProfileView: View {
     @State var name: String
     @State private var image: Image? = Image("sophia")
 
-
+    var sb:UIStoryboard?
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
     @State private var shouldPresentCamera = false
@@ -144,6 +144,31 @@ struct UserProfileView: View {
                          
                         }
                     }
+                    HStack(spacing: 15) {
+                        Button(action: {
+//                            do {
+//                                try Auth.auth().signOut()
+////                                if let vc = self.sb?.instantiateViewController(identifier: "§") {
+////                                    self.
+////                                    self.viewObj?.window?.rootViewController = vc
+////                                    self.sb?.
+//                                }
+//                            }
+//                            catch {
+//
+//                            }
+                        
+                        }, label: {
+                            Text("Logout")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.black)
+                                .padding(.vertical)
+                                .frame(width: UIScreen.main.bounds.width - 150)
+                                .background(Color(.blue))
+                                .clipShape(Capsule())
+                        })
+                         }
+                    
                 }
      
                 //        .environment(\.horizontalSizeClass, .regular)
